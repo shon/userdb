@@ -1,7 +1,7 @@
 import uuid
 import pickle
 import settings
-from happbase import rconn
+from userdb.happbase import rconn
 
 
 def skey(sid):
