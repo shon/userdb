@@ -5,15 +5,20 @@ Create `settings.py` with following variables
 
 
 - SESSIONS_KEY_SEP
-
-  - eg. `-`
+- SESSIONS_KEY_PREFIX
 - SESSION_KEYS
-
-  - eg. ```['key-1', 'key-2']```
-
 - SESSION_TTL (seconds)
 
-  - eg. `30 * 24 * 60 * 60`
+Example
+
+.. code-block:: python
+
+    SESSIONS_KEY_SEP = '-'
+    SESSIONS_KEY_PREFIX = 'sid'
+    SESSION_KEYS = ['prefs', 'last_seen']
+    SESSION_TTL = 30 * 24 * 60 * 60  # (seconds)
+
+
 
 Development Setup
 =================
