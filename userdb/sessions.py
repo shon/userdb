@@ -1,11 +1,12 @@
 import uuid
 import pickle
 import settings
+
 from userdb.happbase import rconn
 
 
 def skey(sid):
-    return settings.SEP.join((settings.KEY_PREFIX, sid))
+    return settings.SESSIONS_KEY_SEP.join((settings.SESSIONS_KEY_PREFIX, sid))
 
 
 def gen_sid():
@@ -18,7 +19,7 @@ def create():
 
 
 def exists(sid):
-    return rconn.exists(sid)
+    return rconn.exists(skey(sid))
 
 
 def get(sid, keys=[]):
@@ -48,7 +49,7 @@ def update(sid, mod_data):
     mod_data = {k: pickle.dumps(v) for k, v in mod_data.items()
                 if k in settings.SESSION_KEYS}
     rconn.hmset(key, mod_data)
-    rconn.expire(key, settings.TTL)
+    rconn.expire(key, settings.SESSION_TTL)
     return True
 
 
@@ -56,5 +57,5 @@ def update_attribute(sid, attribute, value):
 
     key = skey(sid)
     rconn.hset(key, attribute, pickle.dumps(value))
-    rconn.expire(key, settings.TTL)
+    rconn.expire(key, settings.SESSION_TTL)
     return True
