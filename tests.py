@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-import sessions
+import userdb.sessions as sessions
 
 
 def test_create_session():
 
     sid = sessions.create()
-    assert type(sid) == str
+    assert isinstance(sid, str) and len(sid) == 36
 
 
 def test_get_session():

@@ -1,8 +1,10 @@
 import uuid
 import pickle
 import settings
+import redis
 
-from userdb.happbase import rconn
+rconn = redis.Redis(host=settings.SESSIONS_DB_HOST,
+                    port=settings.SESSIONS_DB_PORT, db=settings.SESSIONS_DB_NO)
 
 
 def skey(sid):

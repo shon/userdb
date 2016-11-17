@@ -8,15 +8,21 @@ Create `settings.py` with following variables
 - SESSIONS_KEY_PREFIX
 - SESSION_KEYS
 - SESSION_TTL (seconds)
+- SESSIONS_DB_HOST
+- SESSIONS_DB_PORT
+- SESSIONS_DB_NO
 
 Example
 
 .. code-block:: python
 
-    SESSIONS_KEY_SEP = '-'
+    SESSIONS_KEY_SEP = ':'
     SESSIONS_KEY_PREFIX = 'sid'
     SESSION_KEYS = ['prefs', 'last_seen']
     SESSION_TTL = 30 * 24 * 60 * 60  # (seconds)
+    SESSIONS_DB_HOST = 'localhost'
+    SESSIONS_DB_PORT = 6379
+    SESSIONS_DB_NO = 1
 
 
 
