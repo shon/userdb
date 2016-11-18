@@ -4,8 +4,8 @@ Usage
 Create `settings.py` with following variables
 
 
-- SESSIONS_KEY_SEP
-- SESSIONS_KEY_PREFIX
+- SESSION_KEY_SEP
+- SESSION_KEY_PREFIX
 - SESSION_KEYS
 - SESSION_TTL (seconds)
 - SESSIONS_DB_HOST
@@ -16,8 +16,8 @@ Example
 
 .. code-block:: python
 
-    SESSIONS_KEY_SEP = ':'
-    SESSIONS_KEY_PREFIX = 'sid'
+    SESSION_KEY_SEP = ':'
+    SESSION_KEY_PREFIX = 'sid'
     SESSION_KEYS = ['prefs', 'last_seen']
     SESSION_TTL = 30 * 24 * 60 * 60  # (seconds)
     SESSIONS_DB_HOST = 'localhost'

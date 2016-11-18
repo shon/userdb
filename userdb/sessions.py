@@ -8,7 +8,7 @@ rconn = redis.Redis(host=settings.SESSIONS_DB_HOST,
 
 
 def skey(sid):
-    return settings.SESSIONS_KEY_SEP.join((settings.SESSIONS_KEY_PREFIX, sid))
+    return settings.SESSION_KEY_SEP.join((settings.SESSION_KEY_PREFIX, sid))
 
 
 def gen_sid():
