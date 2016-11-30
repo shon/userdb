@@ -3,8 +3,12 @@ import pickle
 import settings
 import redis
 
-rconn = redis.Redis(host=settings.SESSIONS_DB_HOST,
-                    port=settings.SESSIONS_DB_PORT, db=settings.SESSIONS_DB_NO)
+rconn = redis.Redis(
+    host=settings.SESSIONS_DB_HOST,
+    port=settings.SESSIONS_DB_PORT,
+    password=settings.SESSIONS_DB_PASSWORD,
+    db=settings.SESSIONS_DB_NO
+    )
 
 
 def skey(sid):
