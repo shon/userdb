@@ -10,6 +10,7 @@ Create `settings.py` with following variables
 - SESSION_TTL (seconds)
 - SESSIONS_DB_HOST
 - SESSIONS_DB_PORT
+- SESSIONS_DB_PASSWORD
 - SESSIONS_DB_NO
 
 Example
@@ -22,6 +23,7 @@ Example
     SESSION_TTL = 30 * 24 * 60 * 60  # (seconds)
     SESSIONS_DB_HOST = 'localhost'
     SESSIONS_DB_PORT = 6379
+    SESSIONS_DB_PASSWORD = 'password'
     SESSIONS_DB_NO = 1
 
 
